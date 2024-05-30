@@ -19,6 +19,14 @@ import GridLayout from "./GridLayout";
 import Flex from "./Flex";
 import ReactIconsSampler from "./ReactIconsSampler";
 import GridSystem from "./GridSystem";
+import ResponsiveGrids from "./ResponsiveGrids";
+import DramaticResponsiveGrids from "./DramaticResponsiveGrids";
+import ScreenSizeLabel from "./ScreenSizeLabel";
+import ResponsiveTables from "./ResponsiveTables";
+import StylingLists from "./StylingLists";
+import HyperlinkList from "./HyperlinkList";
+import StylingForms from "./StylingForms";
+import Cards from "./Cards";
 export default function Lab2() {
   return (
     <div className="container-fluid">
@@ -42,6 +50,19 @@ export default function Lab2() {
       <Flex />
       <ReactIconsSampler />
       <GridSystem />
+      <ResponsiveGrids />
+      <DramaticResponsiveGrids />
+      <ScreenSizeLabel />
+      <ResponsiveTables />
+      <StylingLists />
+      <HyperlinkList />
+      <StylingForms />
+      <Cards />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
