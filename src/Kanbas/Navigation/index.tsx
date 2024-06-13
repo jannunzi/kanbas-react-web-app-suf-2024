@@ -46,6 +46,7 @@ export default function KanbasNavigation() {
 
       {links.map(({ label, path, icon }) => (
         <Link
+          key={label}
           className={`list-group-item   border-0 text-center ${
             pathname.includes(label)
               ? "bg-white text-danger"
