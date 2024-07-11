@@ -15,7 +15,11 @@ export default function KanbasNavigation() {
   ];
 
   return (
-    <div id="wd-kanbas-navigation" className="rounded-0 list-group">
+    <div
+      id="wd-kanbas-navigation"
+      className="rounded-0 list-group position-fixed z-2 bottom-0 top-0 d-none d-md-block bg-black"
+      style={{ width: 120 }}
+    >
       <a
         className="text-center list-group-item bg-black border-0 text-danger"
         id="wd-neu-link"

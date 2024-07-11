@@ -5,15 +5,25 @@ body {
 body * {
   font-family: Arial, Helvetica, sans-serif;
 }
-.btn-secondary {
+#wd-kanbas .btn-secondary {
   --bs-btn-color: #000;
   --bs-btn-bg: #c7cdd1;
   --bs-btn-border-color: #c7cdd1;
   --bs-btn-hover-color: #fff;
 }
-.bg-secondary {
+#wd-kanbas .bg-secondary {
   background-color: #c7cdd1 !important;
 }
-.border-gray {
+#wd-kanbas .border-gray {
   border: 1px solid gray;
+}
+
+@media (min-width: 768px) {
+  #wd-kanbas .ps-md-5 {
+    padding-left: 140px !important;
+  }
+}
+
+#wd-kanbas .pt-5 {
+  padding-top: 5rem !important;
 }

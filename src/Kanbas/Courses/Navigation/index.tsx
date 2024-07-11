@@ -14,7 +14,10 @@ export default function CoursesNavigation() {
   ];
 
   return (
-    <div id="wd-courses-navigation" className="list-group rounded-0">
+    <div
+      id="wd-courses-navigation"
+      className="list-group rounded-0 position-fixed bottom-0 top-0 z-1 d-none d-md-block pt-5"
+    >
       {links.map((link, index) => (
         <Link
           key={link}
