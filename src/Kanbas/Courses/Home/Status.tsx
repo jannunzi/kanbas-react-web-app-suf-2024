@@ -7,7 +7,7 @@ import { LiaFileImportSolid } from "react-icons/lia";
 }
 export default function CourseStatus() {
   return (
-    <div id="wd-course-status" style={{ width: "300px" }}>
+    <div id="wd-course-status" className="ps-10" style={{ width: "300px" }}>
       <h2>Course Status</h2>
       <div className="d-flex">
         <div className="w-50 pe-1">

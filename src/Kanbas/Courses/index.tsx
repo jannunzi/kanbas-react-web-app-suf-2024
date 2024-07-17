@@ -12,7 +12,7 @@ export default function Courses({ courses }: { courses: any[] }) {
   const course = courses.find((c) => c._id === cid);
   return (
     <div id="wd-courses">
-      <h2 className="text-danger position-fixed bg-white start-0 end-0 ps-md-5 z-1 p-3">
+      <h2 className="text-danger position-fixed bg-white start-0 end-0 ps-md-5 z-1 p-3 top-0">
         <FaAlignJustify className="me-4 fs-4 mb-1" />
         {course?.name} &gt; {pathname.split("/")[4]}
       </h2>
@@ -22,6 +22,8 @@ export default function Courses({ courses }: { courses: any[] }) {
           <Route path="/" element={<Navigate to="Home" />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Modules" element={<Modules />} />
+          <Route path="/Piazza" element={<h1>Piazza</h1>} />
+          <Route path="/Zoom" element={<h1>Zoom</h1>} />
           <Route path="/Assignments" element={<h2>Assignments</h2>} />
           <Route path="/Grades" element={<h2>Grades</h2>} />
           <Route path="/Quizzes" element={<h2>Quizzes</h2>} />

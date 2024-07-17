@@ -1,30 +1,42 @@
-import { useState } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import Courses from "./Courses";
 import Dashboard from "./Dashboard";
 import KanbasNavigation from "./Navigation";
 import "./styles.css";
-import * as db from "./Database";
+import { useState } from "react";
+// import * as db from "./Database";
 import store from "./store";
 import { Provider } from "react-redux";
+import * as client from "./Courses/client";
+import { useEffect } from "react";
 
 export default function Kanbas() {
-  const [courses, setCourses] = useState(db.courses);
-  const [course, setCourse] = useState<any>({
-    _id: "123",
-    name: "New Course",
-    number: "New Course Number",
-    startDate: "2023-01-10",
-    endDate: "2023-05-15",
-    department: "D123",
-    credits: 4,
-    description: "This is a dummy course",
-  });
-  const deleteCourse = (courseId: string) => {
-    const newCourses = courses.filter((course) => course._id !== courseId);
-    setCourses(newCourses);
+  const [courses, setCourses] = useState<any[]>([]);
+
+  const fetchCourses = async () => {
+    const courses = await client.fetchAllCourses();
+    setCourses(courses);
   };
-  const updateCourse = () => {
+
+  const [course, setCourse] = useState<any>({
+    _id: "0",
+    name: "New Course",
+    number: "New Number",
+    startDate: "2023-09-10",
+    endDate: "2023-12-15",
+    image: "/images/reactjs.jpg",
+    description: "New Description",
+  });
+  const addNewCourse = async () => {
+    const newCourse = await client.createCourse(course);
+    setCourses([newCourse, ...courses]);
+  };
+  const deleteCourse = async (courseId: string) => {
+    await client.deleteCourse(courseId);
+    setCourses(courses.filter((course) => course._id !== courseId));
+  };
+  const updateCourse = async () => {
+    await client.updateCourse(course);
     setCourses(
       courses.map((c) => {
         if (c._id === course._id) {
@@ -36,14 +48,10 @@ export default function Kanbas() {
     );
   };
 
-  const addNewCourse = () => {
-    const newCourse = {
-      ...course,
-      name: `${course.name} ${courses.length}`,
-      _id: Date.now().toString(),
-    };
-    setCourses([newCourse, ...courses]);
-  };
+  useEffect(() => {
+    fetchCourses();
+  }, []);
+
   return (
     <Provider store={store}>
       <div id="wd-kanbas">
