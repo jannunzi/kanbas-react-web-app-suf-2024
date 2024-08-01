@@ -12,6 +12,7 @@ export default function KanbasNavigation() {
     { label: "Inbox", path: "/Kanbas/Inbox", icon: FaInbox },
     { label: "Help", path: "/Kanbas/Help", icon: FaHelicopter },
     { label: "Labs", path: "/Labs", icon: LiaCogSolid },
+    { label: "Napster", path: "/Kanbas/Napster", icon: LiaCogSolid },
   ];
 
   return (
@@ -26,6 +27,7 @@ export default function KanbasNavigation() {
         target="_blank"
         href="https://www.northeastern.edu/"
       >
+        <img src="/images/NEU.png" alt="neu" className="w-100" />
         Northeastern
       </a>
 

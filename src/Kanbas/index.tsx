@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import Account from "./Account";
 import Session from "./Account/Session";
 import ProtectedRoute from "./ProtectedRoute";
+import Napster from "../Napster";
 
 export default function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
@@ -89,6 +90,7 @@ export default function Kanbas() {
               />
               <Route path="/Calendar" element={<h2>Calendar</h2>} />
               <Route path="/Inbox" element={<h2>Inbox</h2>} />
+              <Route path="/Napster/*" element={<Napster />} />
             </Routes>
           </div>
         </div>
